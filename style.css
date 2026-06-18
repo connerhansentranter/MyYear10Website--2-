@@ -1,29 +1,51 @@
 /* A simple css reset */
-body,
+body{
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(102,217,255,0.15),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            to bottom,
+            #050816,
+            #091427,
+            #10213A
+        );
+
+    background-attachment: fixed;
+
+    color: white;
+}
 html {
     margin: 0;
     padding: 0;
     height: 100%;
     /* The Font Family- Really important!! */
-    font-family: Arial, sans-serif;
+    font-family: "Space Mono", monospace;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /* reset for images to ensure they ar 100% of the parent container width */
 img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 /* The hero section styling- use your OWN Hero Image URL here */
 .hero {
-    background-image: url('c:\Users\conne\Downloads\MyYear10Website (2)\images\Mywebsite banner.png');
+    background-image: url('images/bannergif.gif');
     height: 25vh;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(9, 243, 243);
+    color: whitesmoke;
     text-align: center;
     position: relative;
 }
@@ -32,50 +54,219 @@ img {
 .hero-text {
     font-size: 4em;
     font-weight: bold;
-    
+    animation: floatGlow 4s ease-in-out infinite;
 }
 
+/* TOP NAVIGATION */
+.top-tabs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 1.2em;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5,8,22,0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(102,217,255,0.12);
+}
+
+.top-tabs a{
+    color: #BFE9FF;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 0.7em 1.4em;
+    border-radius: 999px;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.top-tabs a:hover{
+    transform: translateY(-3px);
+    background: rgba(102,217,255,0.08);
+    box-shadow:
+        0 0 20px rgba(102,217,255,0.35);
+    color: white;
+}
+/*---------------------------ABOUT ME SECTION-----------------------
 /* nice big font on a banner style background */
-.topic-title{
-    color: rgb(0, 255, 255);
-    font-size: 2em;
+.about-me-title{
+      font-size: 2rem;
+    color: #EAF6FF;
+    text-shadow:
+        0 0 10px rgba(102,217,255,0.9),
+        0 0 20px rgba(59,130,246,0.7),
+        0 4px 12px rgba(0,0,0,0.8);
     padding: 0.1em 3em;
-    background-color: rgb(128, 0, 255);
+    background-color: #0F172A;
+border-bottom: 1px solid #66d9ff26;
+box-shadow:
+    0 0 20px rgba(0,0,0,0.3);
 }
 
-/* Three column grid with a nice big gap */
-.topic-content{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6em;
-    /* bring the whole section in off the sides of the page */
+/* 1 column of 3 images */
+.about-me-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2em;
     width: 70%;
-    /* top margin of 3em and center right/left */
     margin: 3em auto;
 }
+.image-column{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
 
-/* Styling for the individual topic cards rounded edges background color and a drop shadow */
-.topic-card{
-    background-color: rgb(234, 0, 255);
-    color: white;
+.about-me-picture img{
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+}
+
+/* Styling for the individual about-me cards rounded edges background color and a drop shadow */
+.about-me-picture{
+    background-color: #0F172A;
+    border: 1px solid rgba(102,217,255,0.12);
+    color: whitesmoke;
     padding: 1em;
     border-radius: 0.5em;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-/* Styling for the topic card titles */
-.topic-card-text{
+.about-me-picture:hover{
+    transform: translateY(-8px) scale(1.03);
+
+    box-shadow:
+        0 0 25px rgba(102,217,255,0.7),
+        0 0 50px rgba(59,130,246,0.5);
+}
+
+/* Text for the about me paragraph*/
+.about-me-text{
+    flex: 1;
+    min-height: 760px;
+    background-color: #091427;
+    color: #EAF6FF;
+    padding: 2em;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(59,130,246,0.3);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease,
+            box-shadow 0.3s ease;
+}
+
+.about-me-text:hover{
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 30px rgba(59,130,246,0.5),
+        0 0 60px rgba(102,217,255,0.15);
+}
+
+.about-me-text h2{
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    color: #BFE9FF;
+    text-shadow:
+        0 0 10px rgba(102,217,255,0.8);
+}
+
+.about-me-text p{
+    margin-bottom: 1.5em;
+}
+
+/*---------------------------END OF ABOUT ME SECTION---------------------------------------------*/
+
+/*---------------------------IMAGE CREATION SECTION---------------------------------------------*/
+
+/* Three column grid with a nice big gap */
+.image-creation-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6em;
+    width: 70%;
+    margin: 3em auto;
+    padding: 1em
+}
+
+.image-creation-pictures{
+    background-color: #0F172A;
+    border: 1px solid rgba(102,217,255,0.12);
+    color: whitesmoke;
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.image-creation-pictures:hover{
+    transform: translateY(-8px) scale(1.03);
+
+    box-shadow:
+        0 0 25px rgba(102,217,255,0.7),
+        0 0 50px rgba(59,130,246,0.5);
+}
+
+.image-creation-text{
     font-size: 1.5em;
     margin-bottom: 0.5em;
-    /* center align text */
     text-align: center;
 }
 
 
+
 /* Styling for a footer section to take a bit of spcae at the bottom of the page */
 .footer{
-    background-color: rgb(212, 16, 153);
+    background-color: #0F172A;
     color: white;
     text-align: right;
     padding: 3em 3em;
 }
+
+.hero-text{
+    font-size: 5rem;
+    color: #EAF6FF;
+    text-shadow:
+        0 0 10px rgba(102,217,255,0.9),
+        0 0 20px rgba(59,130,246,0.7),
+        0 4px 12px rgba(0,0,0,0.8);
+}
+@keyframes floatGlow{
+    0%{
+        transform: translateY(0px);
+        text-shadow:
+            0 0 10px rgba(102,217,255,0.9),
+            0 0 20px rgba(59,130,246,0.7),
+            0 4px 12px rgba(0,0,0,0.8);
+    }
+    50%{
+        transform: translateY(-6px);
+        text-shadow:
+            0 0 20px rgba(102,217,255,1),
+            0 0 40px rgba(59,130,246,0.9),
+            0 6px 18px rgba(0,0,0,0.9);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
