@@ -247,4 +247,44 @@ box-shadow:
         0 4px 12px rgba(5, 124, 235, 0.8);
 }
 
+/*---------------------------END OF IMAGE CREATION SECTION---------------------------------------------*/
 
+/*---------------------------PROGRAMMING WITH PYTHON SECTION---------------------------------------------*/
+
+/* --- Programming With Python Section --- */
+
+/* Container that holds all cards in one row */
+.image-creation-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: nowrap;   /* keeps them in one line */
+}
+
+/* Each card */
+.image-creation-pictures {
+    background: #0d1b2a;
+    padding: 15px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+/* Video size */
+.image-creation-pictures video {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Text under each card */
+.image-creation-text {
+    margin-top: 12px;
+    font-size: 20px;
+    color: #7EC8FF;
+    font-family: 'Poppins', sans-serif;
+}
