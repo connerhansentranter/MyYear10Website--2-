@@ -75,7 +75,7 @@ img {
 .top-tabs a{
     color: #BFE9FF;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 1px;
     padding: 0.7em 1.4em;
     border-radius: 999px;
@@ -302,6 +302,31 @@ section[id] {
 .image-creation-pictures h2 {
     margin-top: 1rem;
     margin-bottom: 0;
+}
+
+#self-reflection .self-reflection-box {
+    width: 70%;
+    margin: 3em auto;
+    background-color: #0460ff;
+    color: #EAF6FF;
+    padding: 2em;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(59, 215, 246, 0.3);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    border: 1px solid rgba(102, 217, 255, 0.2);
+}
+
+#self-reflection .self-reflection-box h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #BFE9FF;
+}
+
+#self-reflection .self-reflection-box p {
+    margin: 0;
 }
 
 /* Footer */
